@@ -1,7 +1,7 @@
 Red/System[
 	Title: "user.reds" 
 	Author: "Boleslav Brezovsky" 
-	Date: 12-7-2012
+	Date: "12-7-2012"
 ]
 
 ; --- definitions

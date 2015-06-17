@@ -1,7 +1,7 @@
 Red/System [
 	Title:		"OpenCV cxtypes"
-	Author:		"François Jouen"
-	Rights:		"Copyright (c) 2012-2013 François Jouen. All rights reserved."
+	Author:		"Fran¬çois Jouen"
+	Rights:		"Copyright (c) 2012-2013 Fran¬çois Jouen. All rights reserved."
 	License: 	"BSD-3 - https:;github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
 ]
 
@@ -180,7 +180,7 @@ CvMatr64d: as float64! 0.0
 CvMatrix3!: alias struct![m [int-ptr!] ]
 
 
-;revoir CvRandState quand défini
+;revoir CvRandState quand dÔøΩfini
 CvConDensation!: alias struct! [
     MP				[integer!]
     DP				[integer!]

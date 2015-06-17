@@ -1,8 +1,8 @@
 Red/System [
 	Title:		"OpenCV Tests: Drawing"
-	Author:		"François Jouen"
-	Rights:		"Copyright (c) 2012-2013 François Jouen. All rights reserved."
-	License:        "BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
+	Author:		"Fran¬çois Jouen"
+	Rights:		"Copyright (c) 2012-2013 Fran¬çois Jouen. All rights reserved."
+	License:	"BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
 ]
 
 #include %../opencv.reds

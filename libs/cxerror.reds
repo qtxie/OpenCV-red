@@ -1,8 +1,8 @@
 Red/System [
 	Title:		"OpenCV cxerror"
-	Author:		"François Jouen"
-	Rights:		"Copyright (c) 2012013 François Jouen. All rights reserved."
-	License:        "BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
+	Author:		"Fran¬çois Jouen"
+	Rights:		"Copyright (c) 2012013 Fran¬çois Jouen. All rights reserved."
+	License:	"BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
 ]
 
 ;************Below is declaration of error handling stuff in PLSuite manner**

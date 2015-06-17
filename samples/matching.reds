@@ -1,7 +1,7 @@
 Red/System [
 	Title:		"OpenCV Camera Test"
-	Author:		"François Jouen"
-	Rights:		"Copyright (c) 2012-2013 François Jouen. All rights reserved."
+	Author:		"Fran¬çois Jouen"
+	Rights:		"Copyright (c) 2012-2013 Fran¬çois Jouen. All rights reserved."
 	License:     "BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
 ]
 
@@ -56,7 +56,7 @@ templ: cvCreateImage w h 8 3
 cvNamedWindow "Template" CV_WINDOW_AUTOSIZE
 
 
-;définition de la taille(largeur, hauteur) de l'image ftmp
+;dÔøΩfinition de la taille(largeur, hauteur) de l'image ftmp
 iwidth: src/width - templ/width + 1
 iheight: src/height - templ/height + 1
 ftmp: cvCreateImage iwidth iheight IPL_DEPTH_32F 1
@@ -80,10 +80,10 @@ key: 0
 while [key <> 27] [
     src: cvRetrieveFrame capture
    ; &src: as byte-ptr! src
-    ;applique le filtre médian pour réduire le bruit
+    ;applique le filtre mÔøΩdian pour rÔøΩduire le bruit
     cvSmooth &src &src CV_GAUSSIAN 3 3 0.0 0.0
     
-    ;si la touche 'espace' code ASCII '32' est appuyée, on enregistre le template à partir de l'image 'src'
+    ;si la touche 'espace' code ASCII '32' est appuyÔøΩe, on enregistre le template ÔøΩ partir de l'image 'src'
     if key = 32 [
         cvZero &templ
         cvRectangle &src cadre_pt1/x cadre_pt1/y cadre_pt2/x cadre_pt2/y 0.0 0.0 255.0 0.0 thickness lineType 0

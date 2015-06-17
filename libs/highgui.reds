@@ -1,7 +1,7 @@
 Red/System [
 	Title:		"OpenCV highgui"
-	Author:		"Fran�ois Jouen"
-	Rights:		"Copyright (c) 2012-2013 Fran�ois Jouen. All rights reserved."
+	Author:		"Franois Jouen"
+	Rights:		"Copyright (c) 2012-2013 Franois Jouen. All rights reserved."
 	License: 	"BSD-3 - https://github.com/dockimbel/Red/blob/master/BSD-3-License.txt"
 ]
 
