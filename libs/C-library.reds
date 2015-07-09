@@ -640,15 +640,15 @@ date!: alias struct! [
         
         ;added by F. Jouen
         ; is not a number? 
-        isNaN: "isNaN" [
-                value           [float!]
-                return:		[logic!]   
-        ]
-        ;isinf - test for infinity
-        isInf: "isInf" [
-                value           [float!]
-                return:		[integer!]
-        ]
+        ;isNaN: "isNaN" [
+        ;        value           [float!]
+        ;        return:		[logic!]   
+        ;]
+        ;;isinf - test for infinity
+        ;isInf: "isInf" [
+        ;        value           [float!]
+        ;        return:		[integer!]
+        ;]
         ;// F. Jouen
 	; Random numbers
 

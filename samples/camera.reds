@@ -9,21 +9,40 @@ Red/System [
 ; use  default camera 
 cvStartWindowThread ; separate window thread
 
-capture: cvCreateCameraCapture CV_CAP_ANY ; create a cature using default webcam (iSight) ; change to n for other cam
+capture: cvCreateFileCapture "http://192.168.2.1/?action=stream.mjpeg" ; create a cature using default webcam (iSight) ; change to n for other cam
 print [capture lf]
 if capture = null [print "error!" lf]
 
-;set our movie properties
-fps: 24.00
-camW: 1280
-camH: 1024
-rec: false ; no automatic movie recording 
+;cvSetCaptureProperty capture CV_CAP_PROP_FRAME_WIDTH 1280.0
+;cvSetCaptureProperty capture CV_CAP_PROP_FRAME_HEIGHT 720.0
 
-; creates a writer to record video
-movie: "/Users/fjouen/Movies/camera.mov"
-writer: cvCreateVideoWriter movie CV_FOURCC(#"D" #"I" #"V" #"X") fps camW camH 1 ; 1: CV_DEFAULT (1)
-&writer: as byte-ptr! writer ; get the pointer address
-if &writer = null [print "error"]
+width: cvGetCaptureProperty capture CV_CAP_PROP_FRAME_WIDTH
+height: cvGetCaptureProperty capture CV_CAP_PROP_FRAME_HEIGHT
+;probe CV_FOURCC(#"B" #"G" #"R" #"3")
+;cvSetCaptureProperty capture CV_CAP_PROP_FOURCC 861030210.0
+?? width
+?? height 
+fourcc: cvGetCaptureProperty capture CV_CAP_PROP_FOURCC
+fps: cvGetCaptureProperty capture CV_CAP_PROP_FPS
+vformat: cvGetCaptureProperty capture CV_CAP_PROP_FORMAT
+mode: cvGetCaptureProperty capture CV_CAP_PROP_MODE
+
+;set our movie properties
+?? fourcc
+?? fps
+?? vformat
+?? mode
+camW: 1280
+camH: 720
+rec: true ; no automatic movie recording 
+
+;; creates a writer to record video
+;movie: "camera.mov"
+;writer: cvCreateVideoWriter movie 844715353 fps 640 480 1 ; 1: CV_DEFAULT (1)
+;&writer: as byte-ptr! writer ; get the pointer address
+;if &writer = null [print "error"]
+;&&writer: declare double-byte-ptr!
+;&&writer/ptr: &writer
 
 
 cvNamedWindow "Test Window" CV_WINDOW_AUTOSIZE ; create window to show movie
@@ -42,7 +61,7 @@ foo: 0
 while [foo <> key] [
         image: cvRetrieveFrame capture      ; get the frame
        	cvShowImage "Test Window" &image    ; show frame
-        if rec [cvWriteFrame writer image]  ; write frame on disk if we want to record movie (set rec to true for testing)
+        ;if rec [cvWriteFrame writer image]  ; write frame on disk if we want to record movie (set rec to true for testing)
         foo: cvWaitKey 1
 ]
 
@@ -53,7 +72,8 @@ cvWaitKey 0
 ; releases structures and windows
 cvDestroyAllWindows
 cvReleaseImage &&image 
-;cvReleaseCapture capture ; a pb with MacOSX due to the 32 bit framework
-;cvReleaseVideoWriter &writer
+caphandle: as-integer capture
+cvReleaseCapture as double-byte-ptr! :caphandle ; a pb with MacOSX due to the 32 bit framework
+;cvReleaseVideoWriter &&writer
 
 

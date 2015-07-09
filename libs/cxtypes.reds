@@ -65,9 +65,9 @@ cvSqrt: func [value [float!] return: [float!]] [square-root value]
 
 
 ; is not a number? 
-cvIsNaN: func [ value [float!] return: [logic!]] [isNaN value]
-; infinite? 
-cvIsInf: func [ value [float!] return: [integer!]] [IsInf value]
+;cvIsNaN: func [ value [float!] return: [logic!]] [isNaN value]
+;; infinite? 
+;cvIsInf: func [ value [float!] return: [integer!]] [IsInf value]
 
 ; random 
 cvRNG: func [seed [integer!] return: [integer!] /local rng] [

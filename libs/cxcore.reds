@@ -70,7 +70,7 @@ CvErrorCallback!: alias struct! [
         ccvAlloc: "cvAlloc" [
             size    [integer!]
         ]
-        cvFree: "cvFree" [
+        cvFree: "cvFree_" [
             ptr	    [double-byte-ptr!] ; in fact double pointer
 	]
         ;Rebol Specific ; normally we have to use a CvSize! structure to creates images or header
